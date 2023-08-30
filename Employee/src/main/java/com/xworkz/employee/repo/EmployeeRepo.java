@@ -21,5 +21,8 @@ public interface EmployeeRepo {
 	public List<EmployeeDto> readAll();
 
 	public boolean deleteByNameAndId(int id, String name);
+	
+	public List<EmployeeDto> findByName(String name);
+	
 
 }

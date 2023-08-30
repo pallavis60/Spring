@@ -22,6 +22,7 @@ import lombok.NoArgsConstructor;
 @NamedQuery(name = "updateExpByName", query = "Update EmployeeDto dto set dto.experience=:exp where dto.name=:nm ")
 @NamedQuery(name = "deleteByName", query = "delete EmployeeDto dto where dto.name=:nm")
 @NamedQuery(name = "readAll", query = "select dto from EmployeeDto dto")
+@NamedQuery(name="findByName",query="select dto from EmployeeDto dto where dto.name=:nm")
 @Entity
 public class EmployeeDto implements Serializable {
 
@@ -35,6 +36,6 @@ public class EmployeeDto implements Serializable {
 	private String qualification;
 	private float age;
 	private Gender gender;
-	private Long contactNo;
+	private long contactNo;
 
 }

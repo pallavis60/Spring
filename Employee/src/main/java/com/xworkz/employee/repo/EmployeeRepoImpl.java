@@ -138,4 +138,20 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 		return false;
 	}
 
+	@Override
+	public List<EmployeeDto> findByName(String name) {
+		if(em!=null) {
+		TypedQuery<EmployeeDto> query=	em.createNamedQuery("findByName", EmployeeDto.class);
+		  Query query1=query.setParameter("nm", name);
+		List<EmployeeDto> list =  query1.getResultList();
+		if(!list.isEmpty()) {
+			System.out.println(list);
+			return list;
+		}
+		return null;
+		
+		}
+		return null;
+	}
+
 }

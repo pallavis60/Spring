@@ -11,11 +11,12 @@ import com.xworkz.employee.repo.EmployeeRepo;
 @Component
 public class EmployeeServiceImpl implements EmployeeService {
 
-	@Autowired
+ @Autowired
 	private EmployeeRepo repo;
 
 	@Override
 	public boolean save(EmployeeDto dto) {
+		if(doExist(dto.getName())!=true) {
 		if (dto != null) {
 			if (dto.getId() > 0) {
 				if (dto.getName() != null && dto.getName().length() >= 3 && dto.getName().length() < 20) {
@@ -26,7 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 									if (dto.getQualification() != null) {
 										if (dto.getAge() >= 21) {
 											if (dto.getGender() != null) {
-												if (dto.getContactNo() != null) {
+												if (dto.getContactNo()>0 && dto.getContactNo()>=10) {
 													System.out.println("Data is validated");
 													repo.save(dto);
 													return true;
@@ -64,7 +65,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 		System.out.println("Dto is null so not valid");
 		return false;
-
+		}
+		System.out.println("The given name is already exist dto is not saved");
+		return false;
 	}
 
 	@Override
@@ -151,6 +154,27 @@ public class EmployeeServiceImpl implements EmployeeService {
 			return false;
 		}
 		System.out.println("id is not valid");
+		return false;
+	}
+
+	@Override
+	public boolean fingByName(String name) {
+		List<EmployeeDto> list=repo.findByName(name);
+		if(list!=null) {
+			System.out.println("Name is found");
+			return true;
+		}
+		System.out.println("Name doest found ");
+		return false;
+	}
+
+	@Override
+	public boolean doExist(String name) {
+		if(fingByName(name)==true) {
+			System.out.println("The name already exist");
+			return true;
+		}
+		System.out.println("The name doest exist");
 		return false;
 	}
 

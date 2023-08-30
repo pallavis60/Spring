@@ -21,5 +21,9 @@ public interface EmployeeService {
 	public boolean deleteByNameAndId(int id,String name);
 
 	public List<EmployeeDto> readAll();
+	
+	public boolean fingByName(String name);
+	
+	public boolean doExist(String name);
 
 }

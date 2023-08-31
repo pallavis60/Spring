@@ -19,5 +19,5 @@ public interface TaxiRepo {
 	
 	public boolean updateTaxiEarningsById(int earning,int id);
 	
-	public List<TaxiDto> bookTaxi();
+	public TaxiDto bookTaxi();
 }

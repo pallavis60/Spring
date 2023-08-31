@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
@@ -15,11 +16,13 @@ import org.springframework.stereotype.Component;
 
 import com.xworkz.taxi.dto.TaxiDto;
 
-@Component
+
 public class TaxiRepoImpl implements TaxiRepo {
 	
-	@Autowired
-	EntityManagerFactory emf;
+	
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("TaxiProperties");
+
+	EntityManager em = emf.createEntityManager();
 
 	@Override
 	public boolean saveTaxi(TaxiDto dto) {
@@ -121,7 +124,7 @@ public class TaxiRepoImpl implements TaxiRepo {
 	}
 
 	@Override
-	public List<TaxiDto> bookTaxi() {
+	public TaxiDto bookTaxi() {
 		EntityManager em=	emf.createEntityManager();
 		if(em!=null) {
 			
@@ -137,12 +140,12 @@ public class TaxiRepoImpl implements TaxiRepo {
 			
 		
 		for(TaxiDto li:dtos) {
-			int eachTripEarning = 100;
+			int eachTripEarning = 200;
 			int updatedEarnings = li.getEarnings() + eachTripEarning;
 			
 			updateTaxiEarningsById(updatedEarnings, li.getId());
 			updateTaxiAvailableById(li.getId(),false);
-			return dtos;
+			return li;
 			
 		}
 		return  null;

@@ -7,17 +7,17 @@ import org.springframework.stereotype.Component;
 
 import com.xworkz.taxi.dto.TaxiDto;
 import com.xworkz.taxi.repo.TaxiRepo;
+import com.xworkz.taxi.repo.TaxiRepoImpl;
 
-@Component
+
 public class TaxiServiceImpl implements TaxiService {
 	
-@Autowired	
-private TaxiRepo repo;
+
+ TaxiRepo repo= new TaxiRepoImpl();
 	
 	@Override
 	public boolean saveTaxi(TaxiDto dto) {
 		if(dto!=null) {
-			if(dto.getId()>0) {
 				if(dto.getEarnings()>100 && dto.getEarnings()<2000) {
 					if(dto.getLocation()!=null && dto.getLocation().length()>=5) {
 						if(dto.getTaxiNo()>0) {
@@ -38,9 +38,6 @@ private TaxiRepo repo;
 				}
 				System.out.println("Earning is not valid");
 				return false;
-			}
-			System.out.println("Id should more than 0");
-			return false;
 		}
 		System.out.println("Dto is null");
 		return false;
@@ -94,7 +91,7 @@ private TaxiRepo repo;
 	}
 
 	@Override
-	public List<TaxiDto> bookTaxi() {
+	public TaxiDto bookTaxi() {
 		return repo.bookTaxi();
 		
 	}

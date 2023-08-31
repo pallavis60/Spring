@@ -3,6 +3,8 @@ package com.xworkz.taxi.dto;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -30,6 +32,17 @@ public class TaxiDto implements Serializable{
 	private boolean isAvailable;
 	private String location;
 	private String trips;
+//	public TaxiDto(Integer taxiNo, int earnings, boolean isAvailable, String location, String trips) {
+//		super();
+//		this.taxiNo = taxiNo;
+//		this.earnings = earnings;
+//		this.isAvailable = isAvailable;
+//		this.location = location;
+//		this.trips = trips;
+//	}
+	
+	
+	
 	
 	
 

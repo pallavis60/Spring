@@ -50,7 +50,7 @@ public class ReadServlet extends HttpServlet {
 	  writer.println("<div><form action=book  method=get><button type=submit> BookTaxi <button><form><div>");
 	  
   }else {
-	  writer.println("Thier is no taxis available");
+	  writer.println("Thier is no taxis available");   
   }
 	
 	

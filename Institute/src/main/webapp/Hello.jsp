@@ -14,6 +14,11 @@
 <input type="password"  name="password" placeholder="Enter Password">
 <button type="submit">Submit</button>
 
+<h1>${userName}</h1>
+<h1>${email}</h1>
+<h1>${password}</h1>
+
+
 
 
 

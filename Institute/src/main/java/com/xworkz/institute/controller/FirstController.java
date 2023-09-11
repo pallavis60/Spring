@@ -3,10 +3,12 @@ package com.xworkz.institute.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.xworkz.institute.dto.BrandDto;
 import com.xworkz.institute.service.InstituteService;
 
 
@@ -34,9 +36,22 @@ public class FirstController {
 		
 		boolean isValid = service.validate(userName, email, password, model);
 		System.out.println(isValid);
-  
-	      return "Welcome";	
+		
+		if(isValid) {
+			return "Register";
+		}else {
+			return "Hello"; 
+		}
+  	
+	}
 	
+	
+	@RequestMapping(value="/register", method=RequestMethod.POST)
+	public String getBrand(BrandDto dto , Model model) {
+		System.out.println(dto);
+		model.addAttribute("dto", dto);
+		
+		return "Welcome";
 		
 	}
 

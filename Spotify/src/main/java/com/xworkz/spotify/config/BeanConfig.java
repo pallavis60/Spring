@@ -1,4 +1,4 @@
-package com.xworkz.institute.config;
+package com.xworkz.spotify.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,28 +10,23 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan("com.xworkz.institute")
+@ComponentScan("com.xworkz.spotify")
 @EnableWebMvc
-public class BeanConfig implements WebMvcConfigurer {
-	
+public class BeanConfig implements  WebMvcConfigurer{
 	
 	public BeanConfig() {
-		System.out.println("BeanConfig is started");
+		System.out.println("Bean Config ");
 	}
-	
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		
-		registry.addRedirectViewController("/", "Hello.jsp");
+		registry.addRedirectViewController("/", "Index.jsp");
 	}
-	
 	
 	@Bean
-	public ViewResolver viewResolver() {
-		
-		return new InternalResourceViewResolver("/", ".jsp");
+	public ViewResolver getViewResolver() {
+		return new InternalResourceViewResolver("/", ".jsp") ;
 		
 	}
-
-}
+} 

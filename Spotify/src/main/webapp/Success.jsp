@@ -4,14 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome all</h1>
-<h1>${welcome}</h1>
-<h1>${userName}</h1>
-<h1>${email}</h1>
-<h1>${password}</h1>
+
+<h1>Data saved Successfully</h1>
+<h4>${dto}</h4>
 
 </body>
 </html>

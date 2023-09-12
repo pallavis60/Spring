@@ -1,6 +1,7 @@
 package com.xworkz.spotify.dto;
 
 import java.io.Serializable;
+import java.net.URL;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="Spotify")
+@Table(name="Spotify_songs")
 @Entity
 public class SongDto implements Serializable{
 	
@@ -27,6 +28,7 @@ public class SongDto implements Serializable{
 	private String movieName;
 	private String artistName;
 	private String duration;
+	private URL songUrl;
 	private Float rating;
 	
 

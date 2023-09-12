@@ -22,24 +22,33 @@ public class SpotifyServiceImpl implements SpotifyService {
 					if(dto.getMovieName()!=null && !dto.getMovieName().isEmpty()) {
 						if(dto.getDuration()!=null) {
 							if(dto.getRating()!=null && dto.getRating()>0.0f) {
+								if(dto.getSongUrl()!=null) {
+									
 								System.out.println("Data is validate");
 								return true;
+								}
+								model.addAttribute("url", "MentionValidUrl");
+								return false;
+								
 							}
-							model.addAttribute("dtoValidate", "Dto is not valid");
+							model.addAttribute("rating", "rating is not valid");
 							return false;
 						}
-						model.addAttribute("SongTitle", "SongTitle is not valid");
+						model.addAttribute("Duration", "Duration is not valid");
 						return false;
 					}
-					model.addAttribute("ArtistName", "Artist is not valid");
+					model.addAttribute("MovieName", "MovieName is not valid");
 					return false;
 				}
-				model.addAttribute("Duration", "Duration is not valid");
+				
+				model.addAttribute("ArtistName", "Artist is not valid");
 				return false;
 			}
-			model.addAttribute("rating", "rating is not valid");
+			
+			model.addAttribute("SongTitle", "SongTitle is not valid");
 			return false;
 		}
+			
 		model.addAttribute("dtoValidate", "Dto is not valid");
 		return false;
 	}

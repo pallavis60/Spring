@@ -10,23 +10,20 @@
 
 .
 
-
-
 </style>
 
 </head>
 <body>
-
-
-
   
     <div class="container mt-5 text-center">
-        <h1 >Welcome to the Song App</h1><br><br><br>
+        <h1 >Welcome to the Spotify App</h1><br><br><br>
         <p >Discover and manage your favorite songs here.</p>
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <a href="AddSong.jsp" class="btn btn-primary btn-lg btn-block mb-3">Add a Song</a>
-                <a href="#" class="btn btn-success btn-lg btn-block">View Songs</a>
+                <a href="Read.jsp" class="btn btn-success btn-lg btn-block">View  All Songs Available</a>
+                <a href="FindSong.jsp" class="btn btn-primary btn-lg btn-block mb-3">View your choice </a>
+                <a href="Update.jsp" class="btn btn-success btn-lg btn-block">Update And Delete Songs</a>
             </div>
         </div>
     </div>

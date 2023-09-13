@@ -21,11 +21,16 @@ font-weight: bolder;
 
 }
 
+.model1{
+color:red;
+text-align: center;
+}
+
 </style>
 </head>
 <body>
 
-
+ <h4 class="model1">${dtoValidate}</h4>
 
 <div class="container mt-5">
         <div class="row justify-content-center">
@@ -42,63 +47,53 @@ font-weight: bolder;
                                 <input type="text" class="form-control" id="songTitle" placeholder="Enter the song title" name="songTitle">
                             </div>
                             
-<h4 class="model">${SongTitle }</h4>
+<h6 class="model">${SongTitle }</h6>
                             <div class="form-group">
                                 <label for="movieName">MovieName</label>
                                 <input type="text" class="form-control" id="movieName" placeholder="Enter the Movie name" name="movieName">
                             </div>
                                                         
-<h4 class="model">${MovieName}</h4>
+<h6 class="model">${MovieName}</h6>
                             
 
                             <div class="form-group">
                                 <label for="aristName">ArtistName</label>
                                 <input type="text" class="form-control" id="aristName" placeholder="Enter the Artist Name"  name="artistName">
                             </div>
- <h4 class="model">${ArtistName}</h4>
+ <h6 class="model">${ArtistName}</h6>
                             
                              <div class="form-group">
                                 <label for="songURL">Song URL</label>
                                 <input type="text" class="form-control" id="songURL" placeholder="Enter the song URL"  name="songUrl">
                             </div>
- <h4 class="model">${url}</h4>
+ <h6 class="model">${url}</h6>
                              <div class="form-group">
                                 <label for="duration">Duration</label>
                                 <input type="text" class="form-control" id="duration" placeholder="Enter Song Duration" name="duration">
                             </div>
                             
-<h4 class="model">${Duration}</h4>
+<h6 class="model">${Duration}</h6>
                             
                             <div class="form-group">
                                 <label for="rating">Rating</label>
                                 <input type="number" class="form-control" id="rating" placeholder="Enter  Rating"  name="rating">
                             </div>
                             
-<h4 class="model">${rating}</h4>
+<h6 class="model">${rating}</h6>
                             
                             <button type="submit" class="btn btn-primary">Add Song</button>
                             
                         </form>
-                        <h4>${dtoValidate}</h4>
+                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>

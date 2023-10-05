@@ -22,7 +22,13 @@ public class SpotifyServiceImpl implements SpotifyService {
 	public boolean validate(SongDto dto,Model model) {
 		boolean valid =true;
 		
-		if(dto!=null ) {
+		if(dto==null ) {
+			System.out.println("dto is null");
+			model.addAttribute("dtoValidate", "Dto is null");
+			 valid=false;
+			
+			
+		}
 			if(dto.getSongTitle()==null || dto.getSongTitle().length()<=3 || dto.getSongTitle().isEmpty()) {
 				model.addAttribute("SongTitle", "Add Valid Song title");
 				valid=false;
@@ -55,11 +61,8 @@ public class SpotifyServiceImpl implements SpotifyService {
 				model.addAttribute("rating", "Rating is not valid");
 				valid=false;
 			}
+			return valid;
 		}
-		System.out.println("dto is null");
-		model.addAttribute("dtoValidate", "Dto is null");
-		return valid=false;
-	}
 		
 	
 	public boolean saveSong(SongDto dto , Model model) {
